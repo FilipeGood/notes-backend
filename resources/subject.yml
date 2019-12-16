@@ -1,0 +1,34 @@
+createSubject:
+  handler: subjects/create.create
+  events:
+    - http:
+        path: subjects/
+        method: post
+        integration: lambda
+        response:
+          headers:
+            Content-Type: "'application/json'"
+            Access-Control-Allow-Origin: "'*'"
+            Access-Control-Allow-Headers: "'*'"
+        cors:
+          origin: "*"
+          headers:
+            - "*"
+          allowCredentials: false
+getAll:
+  handler: subjects/get_all.get_all
+  events:
+    - http:
+        path: subjects/
+        method: get
+        integration: lambda
+        response:
+          headers:
+            Content-Type: "'application/json'"
+            Access-Control-Allow-Origin: "'*'"
+            Access-Control-Allow-Headers: "'*'"
+        cors:
+          origin: "*"
+          headers:
+            - "*"
+          allowCredentials: false

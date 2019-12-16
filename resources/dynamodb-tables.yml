@@ -1,0 +1,27 @@
+Resources:
+  SubjectsTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: subjects
+      AttributeDefinitions:
+        - AttributeName: id
+          AttributeType: S
+      KeySchema:
+        - AttributeName: id
+          KeyType: HASH
+      ProvisionedThroughput:
+        ReadCapacityUnits: 1
+        WriteCapacityUnits: 1
+  NotesTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: notes
+      AttributeDefinitions:
+        - AttributeName: id
+          AttributeType: S
+      KeySchema:
+        - AttributeName: id
+          KeyType: HASH
+      ProvisionedThroughput:
+        ReadCapacityUnits: 1
+        WriteCapacityUnits: 1
